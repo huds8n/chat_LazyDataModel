@@ -1,0 +1,64 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
+
+<ui:composition template="/WEB-INF/facelets/template.xhtml">
+	<ui:define name="head">
+
+	</ui:define>
+
+
+	<ui:define name="title">
+		<title>Chat</title>
+	</ui:define>
+
+	<ui:define name="content">
+
+		<h:form id="form">
+
+			<p:dataTable var="car" value="#{clienteLazyView.lazyModel}"
+				paginator="true" rows="10"
+				paginatorTemplate="{RowsPerPageDropdown} {FirstPageLink} {PreviousPageLink} {CurrentPageReport} {NextPageLink} {LastPageLink}"
+				selectionMode="single" 
+				selection="#{clienteLazyView.clienteSelecionado}" id="carTable"
+				lazy="true">
+				<p:ajax event="rowSelect" listener="#{clienteLazyView.onRowSelect}"
+					update=":form:carDetail" oncomplete="PF('carDialog').show()" />
+
+				<p:column headerText="Nome" >
+					<h:outputText value="#{car.nome}" />
+				</p:column>
+			</p:dataTable>
+
+			<p:dialog header="Car Detail" widgetVar="carDialog" modal="true"
+				showEffect="fade" hideEffect="fade" resizable="false">
+				<p:outputPanel id="carDetail" style="text-align:center;">
+					<p:panelGrid columns="2"
+						rendered="#{not empty clienteLazyView.clienteSelecionado}"
+						columnClasses="label,value">
+
+
+						<h:outputText value="Id:" />
+						<h:outputText
+							value="#{clienteLazyView.clienteSelecionado.codCliente}" />
+
+						<h:outputText value="Year" />
+						<h:outputText value="#{clienteLazyView.clienteSelecionado.nome}" />
+
+
+
+
+					</p:panelGrid>
+				</p:outputPanel>
+			</p:dialog>
+		</h:form>
+	</ui:define>
+
+
+</ui:composition>
+
+</html>

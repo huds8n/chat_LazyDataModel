@@ -1,0 +1,102 @@
+.ui-widget,.ui-widget .ui-widget {
+	font-size: 12px !important;
+}
+
+html,body {
+	height: 99.5%;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	color: #666;
+	font: 75%/1.4 Verdana, Arial, Helvetica, sans-serif;
+	background: -webkit-linear-gradient(#BEBEBE, white);
+	background: -moz-linear-gradient(#BEBEBE, white);
+	background: -o-linear-gradient(#BEBEBE, white);
+	background: linear-gradient(#BEBEBE, white);
+}
+
+#tudo {
+	width: 900px;
+	position: relative;
+	background: repeat-y right;
+	margin: 0 auto;
+	text-align: left;
+	min-height: 100%;
+	border: dotted #999;
+	border-width: 0 1px;
+	padding: 3px;
+	-moz-border-radius: 9px;
+	-webkit-border-radius: 9px;
+	border-radius: 9px;
+}
+
+* html #tudo {
+	height: 100%;
+}
+
+.panel {
+	border: 0px;
+}
+
+#conteudo {
+	padding-bottom: 0px;
+}
+
+#topo {
+	width: 890px;
+	height: 40px;
+	padding-top: 0px;
+	padding-left: 5px;
+	padding-right: 5px;
+}
+
+#principal {
+	width: 890px;
+	height: auto;
+	padding-left: 5px;
+	float: right;
+	padding-top: 5px;
+	padding-right: 5px;
+}
+
+#rodape {
+	width: 900px;
+	height: 20px;
+	bottom: 0;
+	position: absolute;
+	border: dotted #999;
+	border-width: 1px 0;
+	text-align: center;
+}
+
+#rodape p {
+	margin: 0;
+}
+
+.clear {
+	clear: both;
+}
+
+#formLogin {
+	left: 50%;
+	top: 50%;
+	margin: -240px 0 0 -200px;
+	position: absolute;
+	width: 340px;
+}
+
+.ui-icon.star1 {
+	width: 16px;
+	height: 16px;
+	background-image: url(#{   resource [   'pdf.png' ]
+}
+
+);
+}
+.inativo {
+	background-color: #BDBDBD !important;
+	background-image: none !important;
+	color: #000000 !important;
+}
